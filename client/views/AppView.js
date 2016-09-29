@@ -10,6 +10,13 @@ var AppView = Backbone.View.extend({
     this.model.on('change:currentSong', function(model) {
       this.playerView.setSong(model.get('currentSong'));
     }, this);
+
+    this.playerView.$el.on('ended', (event) => {
+      console.log('inside appview ended handler');
+      // this.playerView.setSong(model.get('currentSong'));
+      var queue = this.model.get('songQueue');
+      queue.at(0).ended();
+    });
   },
 
   render: function() {
