@@ -1,0 +1,12 @@
+body {
+  background-color: red;
+}
+
+th {
+  text-align: left;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}

@@ -4,6 +4,7 @@ var Songs = Backbone.Collection.extend({
   model: SongModel,
 
   initialize: function() {
+    this.reset();
     $.ajax({
       url: 'https://api.parse.com/1/classes/songs/',
       type: 'GET',
@@ -15,8 +16,23 @@ var Songs = Backbone.Collection.extend({
         this.trigger('fetchComplete');
       }
     });
+  },
 
-
+  fetchByTitle: function(title) {
+    this.reset();
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/songs/',
+      type: 'GET',
+      data: {where: {title: title}},
+      contentType: 'application/json',
+      success: (data) => {
+        console.log($('input').val());
+        data.results.forEach((song) => {
+          this.add(song);
+        });
+        this.trigger('fetchComplete');
+      }
+    });
   }
 
 });
