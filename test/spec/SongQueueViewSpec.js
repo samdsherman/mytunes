@@ -35,13 +35,17 @@ describe('SongQueueView', function() {
     expect(view.render).to.have.been.called;
   });
 
-  xit('removes song from queue when user clicks it', function() {
+  it('removes song from queue when user clicks it', function() {
     view = new SongQueueView({collection: fakeSongs});
     view.render();
     var first = view.collection.at(0);
     expect(first).to.equal(view.collection.at(0));
-    view.$el.children().first().click();
+    view.$el.find('tbody').children().first().click();
     expect(first).to.not.equal(view.collection.at(0));
   });
-
+  
+  it('should have a header', function() {
+    var view = new SongQueueView({collection: fakeSongs});
+    expect(view.$el.children()[0].tagName).to.equal('TH');
+  });
 });

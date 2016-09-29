@@ -15,16 +15,16 @@ var SongQueue = Backbone.Collection.extend({
     }, this);
 
     this.on('ended', function(song) {
-      // console.log('inside songqueue ended');
       this.remove(song);
       if (this.length) {
         this.playFirst();
+      } else {
+        this.trigger('empty');
       }
     }, this);
 
     this.on('dequeue', function(song) {
-      console.log('dequeueing ' + song);
-      this.remove(song);
+      song.ended();
     }, this);
   },
 

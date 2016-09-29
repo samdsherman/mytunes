@@ -30,6 +30,14 @@ describe('AppView', function() {
       song.play();
       expect(appView.playerView.model).to.equal(song);
     });
+
+    it('blanks out playerView if there are no more songs', function() {
+      var song = app.get('library').at(0);
+      song.enqueue();
+      song.dequeue();
+      expect(null).to.equal(appView.playerView.model);
+
+    });
   });
 
 });

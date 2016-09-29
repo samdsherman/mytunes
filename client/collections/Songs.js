@@ -12,8 +12,11 @@ var Songs = Backbone.Collection.extend({
         data.results.forEach((song) => {
           this.add(song);
         });
+        this.trigger('fetchComplete');
       }
     });
+
+
   }
 
 });

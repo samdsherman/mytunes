@@ -6,6 +6,14 @@ var LibraryView = Backbone.View.extend({
   initialize: function() {
     this.render();
 
+    this.collection.on('fetchComplete', () => {
+      this.render();
+    });
+
+    this.collection.on('play', (song) => {
+      console.log('inside libraryview play');
+      console.log(song.timesPlayed);
+    });
   },
 
   render: function() {
