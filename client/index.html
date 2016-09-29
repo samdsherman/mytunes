@@ -6,7 +6,7 @@
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
-
+    <script src="env/config.js"></script>
     <script src="data/data.js"></script>
 
     <script src="models/SongModel.js"></script>
@@ -18,8 +18,11 @@
     <script src="views/LibraryView.js"></script>
     <script src="views/LibraryEntryView.js"></script>
     <script src="views/AppView.js"></script>
+    <script src="views/SongQueueEntryView.js"></script>
+    <script src="views/SongQueueView.js"></script>
 
-    <script>
+    <!-- <script>
+    setTimeout(function() {
       $(function() {
         // set up model objects
         var library = new Songs(songData);
@@ -31,6 +34,7 @@
         // put the view onto the screen
         $('body').append(appView.render());
       });
-    </script>
+    }, 3000);
+    </script> -->
   </body>
 </html>

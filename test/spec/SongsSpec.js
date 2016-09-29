@@ -1,5 +1,5 @@
 describe('Songs', function() {
-  xdescribe('when fetching song data from Parse', function() {
+  describe('when fetching song data from Parse', function() {
     var songs, fakeSongData, fakeResponse, xhr, requests;
 
     beforeEach(function() {
@@ -30,7 +30,7 @@ describe('Songs', function() {
     });
 
     it('should GET song data from Parse when initialized', function() {
-      songs = new Songs();
+      songs = new Songs(fakeSongData);
       expect(requests[0].method).to.equal('GET');
       expect(requests[0].url).to.include('https://api.parse.com/1/classes/songs');
     });

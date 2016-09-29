@@ -10,6 +10,10 @@ var SongQueue = Backbone.Collection.extend({
       }
     }, this);
 
+    this.on('enqueue', function() {
+      
+    }, this);
+
     this.on('ended', function(song) {
       // console.log('inside songqueue ended');
       this.remove(song);

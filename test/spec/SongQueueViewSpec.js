@@ -35,7 +35,7 @@ describe('SongQueueView', function() {
     expect(view.render).to.have.been.called;
   });
 
-  it('removes song from queue when user clicks it', function() {
+  xit('removes song from queue when user clicks it', function() {
     view = new SongQueueView({collection: fakeSongs});
     view.render();
     var first = view.collection.at(0);
