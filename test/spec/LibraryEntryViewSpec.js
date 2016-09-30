@@ -6,6 +6,7 @@ describe('LibraryEntryView', function() {
       artist: 'Fakey McFakerson',
       title: 'Never Gonna Mock You Up',
       url: 'example/url',
+      artwork_url: ''
     });
     view = new LibraryEntryView({model: model});
     view.render();

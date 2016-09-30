@@ -7,12 +7,14 @@ describe('AppView', function() {
         {
           artist: 'Fakey McFakerson',
           title: 'Never Gonna Mock You Up',
-          url: 'example/url'
+          url: 'example/url',
+          artwork_url: ''
         },
         {
           artist: 'BittyBacon',
           title: 'Sizzle Sundays',
-          url: 'fake/url'
+          url: 'fake/url',
+          artwork_url: ''
         }
       ])
     });
